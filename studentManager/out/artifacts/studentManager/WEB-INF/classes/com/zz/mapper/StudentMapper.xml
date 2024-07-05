@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--配置Mapper接口的全限定的名称-->
+<mapper namespace="com.zz.mapper.StudentMapper">
+    
+    
+    <select id="getStudentAll" resultType="com.zz.pojo.Student">
+        select * from student
+    </select>
+    
+    
+    <!--查询所有学生信息-->
+    <!--关联查询 使用自定义的结果集-->
+    <!--id属性唯一，同一mapper-->
+    <select id="getStudentList" resultMap="getStudentInfo">
+        SELECT * FROM student s LEFT JOIN grade g on s.gid = g.gid
+    </select>
+    
+<!--    <resultMap id="getStudentList" type="com.zz.pojo.Student">
+        <id column="sid" property="sid"></id>
+        <result column="sname" property="sname"></result>
+        <result column="age" property="age"></result>
+        <result column="sex" property="sex"></result>
+        <result column="phone" property="phone"></result>
+        &lt;!&ndash;一对一 grade表中返回 gid gname javaType返回对象参数&ndash;&gt;
+        <association property="grade" javaType="com.zz.pojo.Grade" >
+            <id column="gid" property="gid"></id>
+            <result column="gname" property="gname"></result>
+        </association>
+    </resultMap>-->
+
+    <!--autoMapping="true" 保证表中的里字段和实体类中属性名称一致-->
+    <resultMap id="getStudentInfo" type="com.zz.pojo.Student" autoMapping="true">
+        <id column="sid" property="sid"></id>
+
+        <association property="grade" javaType="com.zz.pojo.Grade" autoMapping="true"></association>
+
+    </resultMap>
+</mapper>

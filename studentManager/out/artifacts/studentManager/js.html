@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title--Js</title>
+    <script>
+        // var num = 12
+        // alert(typeof num)
+        // var name = "das"
+        // alert(typeof name)
+        function sun()
+        {
+            //获取用户输入的数字
+            //获取元素对象的方法
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            //把String转换成number数值型parseFloat(), parseInt()
+            var result = parseFloat(num1) + parseFloat(num2);
+
+            //根据id属性获取p标签,标签中设置的内容使用innerHTML, innerText
+            document.getElementById("res").innerHTML ="<b>" + result + "</b>";
+
+        }
+
+    </script>
+
+</head>
+<body>
+    num1 : <input type="text" id="num1"><br>
+    num2 : <input type="text" id="num2"><br>
+    <input type="button" value="计算" onclick="sun()"><br>
+    result: <span id="res"></span>
+</body>
+</html>
