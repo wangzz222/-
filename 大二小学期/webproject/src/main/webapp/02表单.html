@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function msg(){
+            //消息提示
+            alert("普通按钮点击");
+            document.body.style.backgroundColor="pink";
+        }
+    </script>
+</head>
+<body>
+    你好,第一个网页
+    <!--用于收集用户信息-->
+    <!--提交到服务器-->
+    <!--action:提交到服务器路径url method:设置表单提交的方式默认get get或者post-->
+    <!--get:提交数据的大小有限制，数据会在url中显示，不安全--->
+    <!--post:提交数据的大小无限制，数据不会在url中显示，相对安全--->
+    <form action="#" method="post">
+        用户名：<input type="text" name="username"><br><!--单行文本框--><!--必须设置name属性-->
+        密码：<input type="password" name="password"><br>
+
+        <!--同一组name中只能选择一个-->
+        性别：<input type="radio" name="sex" value="男" checked> 男<!--checked 默认勾选-->
+        <input type="radio" name="sex" value="女"> 女 <br>
+        爱好：<input type="checkbox" name="hobby" value="吃">吃
+        <input type="checkbox" name="hobby" value="喝">喝
+        <input type="checkbox" name="hobby" value="玩">玩<br>
+        <!--日期控件-->
+        出生日期：<input type="date" name="birthday"><br>  <!--type="datetime-local" 可以选择时分-->
+        图片：<input type="file" name="file"><br>
+        隐藏域：<input type="hidden" name="id" value="99"><br>
+        <input type="color" ><br>
+        email:<input type="email" ><br>
+
+        <input type="submit" value="注册"><br>       <!--submit 提交按钮-->
+        <!--结合js使用-->
+        <!--onclick：鼠标单击事件-->
+        <input type="button" value="普通按钮" onclick="msg()"><br>
+        <input type="reset" value="重置"><br>
+    </form>
+</body>
+</html>
