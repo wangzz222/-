@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        function changeContext(){
+            $.get("http://localhost:8080/studentManager/ajax",function (data){
+                // alert(data)
+                $("#myDiv").html(data)
+            },"text");
+        }
+    </script>
+</head>
+<body>
+    <!--button没有设置type 默认submit-->
+    <button type="button" onclick="changeContext()"> ajax修改内容</button>
+    <div id="myDiv"></div>
+</body>
+</html>

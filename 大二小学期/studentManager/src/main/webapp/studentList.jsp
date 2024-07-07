@@ -15,7 +15,7 @@
 <table border="1" align="center" style="border-collapse:collapse"; width="500px">
 
     <tr>
-        <th colspan="6">
+        <th colspan="7">
             <%--请求数据库--%>
             <a href="${pageContext.request.contextPath}/toAdd">添加</a>
         </th>
@@ -27,6 +27,7 @@
         <th>手机号</th>
         <th>性别</th>
         <th>班级</th>
+        <th>操作 </th>
     </tr>
     <%--items:设置遍历的对象var：设置遍历对象别名--%>
     <c:forEach items="${slist}" var="stu" >
@@ -37,6 +38,9 @@
             <td>${stu.phone}</td>
             <td>${stu.sex}</td>
             <td>${stu.grade.gname}</td>
+            <td>
+                <a href="${pageContext.request.contextPath}/deleteStudent?sid=${stu.sid}">删除</a>
+            </td>
         </tr>
     </c:forEach>
 </table>

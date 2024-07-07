@@ -31,7 +31,9 @@
             <form action="${pageContext.request.contextPath}/login" method="post">
                 <div class="panel loginbox">
                     <div class="text-center margin-big padding-big-top"><h1>后台管理中心</h1>
-                    <h5 style="color: #ee3333">用户名或者密码错误</h5></div>
+                   <c:if test="${param.flag==false}">
+                        <h5 style="color:red">用户名或者密码错误</h5></div>
+                   </c:if>
                     <div class="panel-body" style="padding:30px; padding-bottom:10px; padding-top:10px;">
                         <div class="form-group">
                             <div class="field field-icon-right">

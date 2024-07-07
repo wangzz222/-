@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--jquery必须引入才可以引入-->
+    <script src="js/jquery.js"></script>
+    <script>
+        //验证jQuery是否正确使用
+        // alert($)
+
+        //文档就绪函数,整个页面加载完成之后被调用
+        $(function (){
+            // document.getElementById("mydiv").innerHTML="好好";
+            //jQuery选择器  语法结构 $("选择器").action
+            //1. id选择器 使用 #+id
+            //html()   text() 可以设置或获取内容
+
+            // var h = $("#mydiv").html(); //获取内容
+            // alert(h)
+            // $("#mydiv").text("abc");//设置内容
+            // $("#uname").val("zhangsan"); //val() 设置或获取标签对象的value属性值
+            //2. class 类选择器 使用.+class属性  css()设置标签样式
+            // $(".l2").css("color","red").css("fontSize","28px");
+
+            //3.标签选择器
+            // $("li").css("color","blue");
+            //4. 通配符*        $("*")
+            //5. 属性选择器  使用时需要使用[]
+            // $("[name=pwd]").val("123")
+            //each()
+            /*$("[name=hobby]:checked").each(function(){
+                alert($(this).val())
+            });*/
+            // $("#eat").prop("checked",true)
+        })
+        //null.innerHTML 网页顺序从上往下
+
+        function selectAll(){
+            $("[name=hobby]").prop("checked",true)
+        }
+        function deleteAll(){
+            $("[name=hobby]").prop("checked",false)
+        }
+    </script>
+</head>
+<body>
+    <div id="mydiv">123</div>
+    <input type="text" id="uname">
+    <input type="text" name="pwd">
+    <input type="text" name="email"><br>
+
+    <input type="checkbox" name="hobby" value="吃" id="eat"> 吃
+    <input type="checkbox" name="hobby" value="he" > he
+    <input type="checkbox" name="hobby" value="wan"> wan
+
+    <button type="button" onclick="selectAll()">全选</button>
+    <button type="button" onclick="deleteAll()">取消</button>
+
+    <ul>
+        <li>aaa</li>
+        <li class="l2">aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+    </ul>
+</body>
+</html>

@@ -29,6 +29,13 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //
         req.setCharacterEncoding("utf-8");//设置编码格式
+
+        String attempt = req.getParameter("attempt");
+        if (attempt != null) {
+            //没有尝试登录 直接跳转到登录界面
+            resp.setContentType(req.getContentType() + "/login.jsp");
+            return;
+        }
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         //调用业务层的方法：

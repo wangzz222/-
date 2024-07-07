@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function changeContext(){
+            var xmlhttp = new XMLHttpRequest();
+            //2.创建事件的调用
+            xmlhttp.onreadystatechange=function()
+            {
+                // 4 请求完成  200 “OK”
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                }
+            }
+            //3.设置提交方式 异步请求
+            xmlhttp.open("GET","http://localhost:8080/studentManager/ajax",true);
+            //4.发送请求
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <!--button没有设置type 默认submit-->
+    <button type="button" onclick="changeContext()"> ajax修改内容</button>
+    <div id="myDiv"></div>
+</body>
+</html>
