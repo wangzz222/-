@@ -2,7 +2,6 @@ package com.zz.controller.depart;
 
 import com.github.pagehelper.PageInfo;
 import com.zz.service.DepartmentsService;
-import com.zz.service.DoctorsService;
 import com.zz.service.impl.DepartmentsServiceImpl;
 
 import javax.servlet.ServletException;
@@ -37,7 +36,6 @@ public class GetDepartListServlet extends HttpServlet {
         req.setAttribute("pageInfo", pageInfo);
         //使用转发的跳转方式
         req.getRequestDispatcher("/departList.jsp").forward(req, resp);
-        System.out.println("asdasdasda");
     }
 
 }

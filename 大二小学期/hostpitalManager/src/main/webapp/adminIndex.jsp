@@ -32,7 +32,7 @@
     <ul style="display:block">
         <li><a href="${pageContext.request.contextPath}/depart/getDepartList" target="right"><span class="icon-caret-right"></span>科室设置</a></li>
         <li><a href="list.html" target="right"><span class="icon-caret-right"></span>职称管理</a></li>
-        <li><a href="list.html" target="right"><span class="icon-caret-right"></span>医生管理</a></li>
+        <li><a href="${pageContext.request.contextPath}/doctor/getDoctorList" target="right"><span class="icon-caret-right"></span>医生管理</a></li>
         <li><a href="list.html" target="right"><span class="icon-caret-right"></span>排版管理</a></li>
     </ul>
     <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>

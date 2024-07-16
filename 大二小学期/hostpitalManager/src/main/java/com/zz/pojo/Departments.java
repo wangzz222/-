@@ -1,12 +1,13 @@
 package com.zz.pojo;
 
 public class Departments {
-    private Integer departmentID;
+    private Integer departmentId;
     private String departmentName;
     private Integer departmentLevel;
     private Integer departmentPid;
     private String departmentPath;
     private String departmentDescription;
+    private boolean haschild;  //判断当前的科室是否有下一级 true 有
 
     public String getDepartmentName() {
         return departmentName;
@@ -16,12 +17,12 @@ public class Departments {
         this.departmentName = departmentName;
     }
 
-    public Integer getDepartmentID() {
-        return departmentID;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartmentID(Integer departmentID) {
-        this.departmentID = departmentID;
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     public Integer getDepartmentLevel() {
@@ -56,4 +57,10 @@ public class Departments {
         this.departmentDescription = departmentDescription;
     }
 
+    public void setHashchild(boolean haschild) {
+        this.haschild = haschild;
+    }
+    public boolean getHaschild(){
+        return haschild;
+    }
 }

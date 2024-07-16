@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--配置Mapper接口的全限定的名称-->
+<mapper namespace="com.zz.mapper.DoctorsMapper">
+    <select id="getDoctorList" resultMap="getDoctorInfo">
+        select * from doctors d LEFT JOIN departments dt on d.department_id = dt.department_id
+        LEFT JOIN professional_titles pt on d.professional_title_id = pt.id
+        <where>
+            <if test="dname != null and dname !=''">
+                and name like concat("%",#{dname},"%")
+            </if>
+            <if test="jobnum != null and jobnum !=''">
+                and job_number = #{jobnum}
+            </if>
+            <if test="did != null and did !='-1'">
+                and d.department_id = #{did}
+            </if>
+            <if test="pid != null and pid !='-1'">
+                and d.professional_title_id = #{pid}
+            </if>
+            and state = 0
+        </where>
+    </select>
+
+    <resultMap id="getDoctorInfo" type="com.zz.pojo.Doctors" autoMapping="true">
+        <id property="doctorId" column="doctor_id"></id>
+        <!--科室-->
+        <association property="departments" javaType="com.zz.pojo.Departments"  autoMapping="true"></association>
+        <!--职称-->
+        <association property="professionalTitles" javaType="com.zz.pojo.ProfessionalTitles"  autoMapping="true"></association>
+    </resultMap>
+
+
+</mapper>

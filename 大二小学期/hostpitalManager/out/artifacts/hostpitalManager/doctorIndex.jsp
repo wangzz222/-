@@ -50,7 +50,7 @@
 </script>
 
 <div class="admin">
-    <iframe scrolling="auto" rameborder="0" src="info.html" name="right" width="100%" height="100%"></iframe>
+    <iframe scrolling="auto" rameborder="0" src="${pageContext.request.contextPath}/doctorInfo.jsp" name="right" width="100%" height="100%"></iframe>
 </div>
 <div style="text-align:center;">
     <p>来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
